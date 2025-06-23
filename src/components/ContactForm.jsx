@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import "./ContactForm.css";
 
 function ContactForm() {
@@ -11,8 +13,17 @@ function ContactForm() {
     message: "",
   });
 
+  const [fromDate, setFromDate] = useState(null);
+  const [toDate, setToDate] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
   };
 
   const whatsappMessage = `New Booking Enquiry:
@@ -21,6 +32,8 @@ Phone: ${formData.phone}
 Destination: ${formData.destination}
 People: ${formData.people}
 Vehicle: ${formData.vehicle}
+From: ${fromDate ? fromDate.toLocaleDateString() : ""}
+To: ${toDate ? toDate.toLocaleDateString() : ""}
 Message: ${formData.message}`;
 
   return (
@@ -31,61 +44,91 @@ Message: ${formData.message}`;
         className="contact__form"
         action="https://formspree.io/f/mldnpdbn"
         method="POST"
+        onSubmit={handleSubmit}
       >
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          required
-          onChange={handleChange}
-        />
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Mobile Number"
-          required
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="destination"
-          placeholder="Destination / Place"
-          required
-          onChange={handleChange}
-        />
+        <div className="form-grid">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            onChange={handleChange}
+          />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Mobile Number"
+            pattern="[0-9]{10}"
+            title="10 digit mobile number"
+            required
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="destination"
+            placeholder="Destination / Place"
+            required
+            onChange={handleChange}
+          />
+          <input
+            type="number"
+            name="people"
+            placeholder="No. of People"
+            required
+            onChange={handleChange}
+          />
+          <select
+            name="vehicle"
+            required
+            onChange={handleChange}
+            defaultValue=""
+          >
+            <option value="" disabled>Select Vehicle</option>
+            <option value="Bus">Bus</option>
+            <option value="Scorpio">Scorpio</option>
+            <option value="Innova">Innova</option>
+            <option value="Car">Car</option>
+            <option value="Tempo Traveller">Tempo Traveller</option>
+          </select>
 
-        <input
-          type="number"
-          name="people"
-          placeholder="No. of People"
-          required
-          onChange={handleChange}
-        />
+          {/* Stylish Date Pickers */}
+          <div className="date-picker-wrapper">
+            <label>From:</label>
+            <DatePicker
+              selected={fromDate}
+              onChange={(date) => setFromDate(date)}
+              placeholderText="Select Start Date"
+              dateFormat="dd/MM/yyyy"
+              required
+            />
+          </div>
 
-        <select
-          name="vehicle"
-          required
-          onChange={handleChange}
-          defaultValue=""
-        >
-          <option value="" disabled>Select Vehicle</option>
-          <option value="Bus">Bus</option>
-          <option value="Scorpio">Scorpio</option>
-          <option value="Innova">Innova</option>
-          <option value="Car">Car</option>
-          <option value="Tempo Traveller">Tempo Traveller</option>
-        </select>
+          <div className="date-picker-wrapper">
+            <label>To:</label>
+            <DatePicker
+              selected={toDate}
+              onChange={(date) => setToDate(date)}
+              placeholderText="Select End Date"
+              dateFormat="dd/MM/yyyy"
+              required
+            />
+          </div>
 
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          rows="4"
-          required
-          onChange={handleChange}
-        ></textarea>
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="4"
+            required
+            onChange={handleChange}
+          ></textarea>
+        </div>
 
-        <button type="submit">Send Email</button>
+        <button type="submit">📧 Send Email</button>
       </form>
+
+      {submitted && (
+        <p className="submit-success">✅ Thank you! We'll contact you shortly.</p>
+      )}
 
       <a
         href={`https://wa.me/919955462402?text=${encodeURIComponent(
@@ -95,7 +138,7 @@ Message: ${formData.message}`;
         target="_blank"
         rel="noopener noreferrer"
       >
-        Send on WhatsApp
+        💬 Send on WhatsApp
       </a>
     </section>
   );

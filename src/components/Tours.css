@@ -1,28 +1,29 @@
 .tours {
   padding: 4rem 2rem;
-  background-color: #fefefe;
+  background: linear-gradient(135deg, #abcde6, #ffb5b5);
   text-align: center;
 }
 
 .tours__heading {
   font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #0d47a1;
+  margin-bottom: 2.5rem;
+color: #0d47a1;
+ color: var(--primary-color);  font-weight: bold;
 }
 
 .tours__grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: center;
 }
 
 .tour__card {
-  background: white;
-  padding: 1.2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-  width: 260px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 280px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
   display: flex;
@@ -31,55 +32,56 @@
 }
 
 .tour__card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .tour__image {
   width: 100%;
-  height: 160px;
+  height: 170px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 0.75rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 .tour__card h3 {
-  color: #0d47a1;
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
+color: #0d47a1;
+ color: var(--primary-color);  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
 }
 
 .tour__desc {
   color: #444;
-  font-size: 0.85rem;
-  line-height: 1.4;
-  max-height: 80px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-height: 90px;
   overflow: hidden;
   position: relative;
+  transition: max-height 0.4s ease;
 }
 
 .tour__desc.expanded {
-  max-height: 1000px;
-  overflow: visible;
+  max-height: 500px;
 }
 
 .read-more-btn {
-  margin-top: 0.5rem;
-  background-color: #0d47a1;
-  color: white;
-  padding: 6px 12px;
-  font-size: 0.8rem;
+  margin-top: 0.8rem;
+color: #0d47a1;
+ color: var(--primary-color);  color: white;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 30px;
   cursor: pointer;
   align-self: flex-start;
+  transition: background 0.3s ease;
 }
 
 .read-more-btn:hover {
-  background-color: #0b3c8a;
-}
+background-color: #0b3c8a;
+ background-color: var(--primary-hover);}
 
-
+/* Responsive */
 @media (max-width: 768px) {
   .tour__card {
     width: 100%;

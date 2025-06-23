@@ -1,10 +1,10 @@
 .navbar {
-  background: #0d47a1;
+  background: #5c6ac4;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 2rem;
+  padding: 0.6rem 1.5rem;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -12,20 +12,33 @@
 }
 
 .navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.navbar__logo-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.navbar__logo-text {
   font-size: 1.5rem;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .navbar__hamburger {
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   background: none;
   color: white;
   border: none;
   cursor: pointer;
 }
 
-/* Links Section */
+/* Links */
 .navbar__links {
   display: flex;
   gap: 2rem;
@@ -37,12 +50,13 @@
 .navbar__links a {
   color: white;
   text-decoration: none;
-  transition: color 0.3s ease;
   font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .navbar__links a:hover {
   color: #ffca28;
+  transform: scale(1.05);
 }
 
 /* Socials */
@@ -51,19 +65,19 @@
 }
 
 .socials__btn {
-  background-color: #ffffff;
+  background-color: white;
   color: #0d47a1;
   padding: 0.5rem 1.2rem;
   border: none;
-  border-radius: 50px;
+  border-radius: 30px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .socials__btn:hover {
-  background-color: #ffca28;
-  color: #0d47a1;
+  background-color: #0757c0;
+  color: #b2cef8;
 }
 
 .socials__dropdown {
@@ -99,6 +113,7 @@
   margin-right: 0.5rem;
 }
 
+/* Responsive */
 @media screen and (max-width: 768px) {
   .navbar__hamburger {
     display: block;
@@ -117,7 +132,7 @@
   }
 
   .navbar__links li {
-    padding: 0.5rem 0;
+    padding: 0.6rem 0;
     text-align: center;
   }
 

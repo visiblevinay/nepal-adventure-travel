@@ -26,8 +26,8 @@ function App() {
     <>
       <Navbar />
       <HeroSection />
-      <Services />
       <Tours />
+       <Services />
       <Hotels />
       <Gallery />
       <Reviews />

@@ -42,8 +42,8 @@ const hotelsData = {
 
 function Hotels() {
   return (
-    <section className="hotels" id="hotels" data-aos="fade-up">
-      <h2 className="hotels__heading" data-aos="fade-up">Hotels & Stay Options</h2>
+    <section className="hotels" id="hotels">
+      <h2 className="hotels__heading">🛏️ Hotels & Stay Options</h2>
       <div className="hotels__regions">
         {Object.entries(hotelsData).map(([region, hotels], index) => (
           <div
@@ -55,7 +55,7 @@ function Hotels() {
             <h3>{region}</h3>
             <ul>
               {hotels.map((hotel, idx) => (
-                <li key={idx}>{hotel}</li>
+                <li key={idx}>🏨 {hotel}</li>
               ))}
             </ul>
           </div>

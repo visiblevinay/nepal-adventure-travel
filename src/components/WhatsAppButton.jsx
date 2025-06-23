@@ -1,5 +1,6 @@
 import React from "react";
 import "./WhatsAppButton.css";
+import { FaWhatsapp } from "react-icons/fa"; // React Icon
 
 function WhatsAppButton() {
   return (
@@ -10,7 +11,7 @@ function WhatsAppButton() {
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
     >
-      <i className="fab fa-whatsapp"></i>
+      <FaWhatsapp size={30} />
     </a>
   );
 }

@@ -6,22 +6,28 @@ const reviews = [
     name: "Ravi Sharma",
     date: "June 2025",
     rating: 5,
-    comment: "An unforgettable journey! The Kathmandu, Pokhara & Chitwan tour was beautifully organized. Highly recommended.",
-    photo: "https://cdn-icons-png.freepik.com/256/6997/6997484.png?ga=GA1.1.100897357.1727642025&semt=ais_hybrid",
+    comment:
+      "An unforgettable journey! The Kathmandu, Pokhara & Chitwan tour was beautifully organized. Highly recommended.",
+    photo:
+      "https://cdn-icons-png.freepik.com/256/6997/6997484.png",
   },
   {
     name: "Priya Menon",
     date: "May 2025",
     rating: 4,
-    comment: "Excellent service and punctuality. The guides were knowledgeable and the car service was top‑notch.",
-    photo: "https://cdn-icons-png.freepik.com/256/6997/6997666.png?ga=GA1.1.100897357.1727642025&semt=ais_hybrid",
+    comment:
+      "Excellent service and punctuality. The guides were knowledgeable and the car service was top‑notch.",
+    photo:
+      "https://cdn-icons-png.freepik.com/256/6997/6997666.png",
   },
   {
     name: "Ankit Verma",
     date: "April 2025",
     rating: 5,
-    comment: "Amazing! We loved the Muktinath pilgrimage—well‑planned and spiritually uplifting.",
-    photo: "https://cdn-icons-png.freepik.com/256/11195/11195292.png?ga=GA1.1.100897357.1727642025&semt=ais_hybrid",
+    comment:
+      "Amazing! We loved the Muktinath pilgrimage—well‑planned and spiritually uplifting.",
+    photo:
+      "https://cdn-icons-png.freepik.com/256/11195/11195292.png",
   },
 ];
 
@@ -32,8 +38,14 @@ function Reviews() {
       <div className="reviews__grid">
         {reviews.map((review, index) => (
           <div className="review__card" key={index}>
-            <img src={review.photo} alt={review.name} className="review__photo" />
-            <div className="review__stars">{"⭐".repeat(review.rating)}</div>
+            <img
+              src={review.photo}
+              alt={review.name}
+              className="review__photo"
+            />
+            <div className="review__stars">
+              {"⭐".repeat(review.rating)}
+            </div>
             <p className="review__comment">“{review.comment}”</p>
             <div className="review__footer">
               <strong>{review.name}</strong> • <span>{review.date}</span>
@@ -41,12 +53,17 @@ function Reviews() {
           </div>
         ))}
       </div>
+
       <a
         href="https://maps.app.goo.gl/JhXZYZ6fzk4gpteeA?g_st=aw"
         target="_blank"
         rel="noopener noreferrer"
         className="review__button"
       >
+        <img
+          src="https://cdn-icons-png.flaticon.com/24/281/281769.png"
+          alt="Google"
+        />
         See All Reviews on Google
       </a>
     </section>

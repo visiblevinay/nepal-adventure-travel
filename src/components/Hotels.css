@@ -1,13 +1,15 @@
 .hotels {
   padding: 4rem 2rem;
-  background-color: #fefefe;
+  background: linear-gradient(135deg, #abcde6, #ffb5b5);
   text-align: center;
 }
 
 .hotels__heading {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #0d47a1;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .hotels__regions {
@@ -18,24 +20,27 @@
 }
 
 .region__card {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 1.5rem;
+  background: white;
+  border-radius: 16px;
+  padding: 1.8rem;
   width: 280px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   text-align: left;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e3e3e3;
 }
 
 .region__card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
 .region__card h3 {
   color: #0d47a1;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #bbdefb;
+  padding-bottom: 0.4rem;
 }
 
 .region__card ul {
@@ -44,15 +49,10 @@
 }
 
 .region__card li {
-  font-size: 0.95rem;
-  color: #444;
-  margin-bottom: 0.5rem;
-  padding-left: 1.2rem;
+  font-size: 0.96rem;
+  color: #333;
+  margin-bottom: 0.6rem;
+  padding-left: 1rem;
   position: relative;
-}
-
-.region__card li::before {
-  content: "🍱";
-  position: absolute;
-  left: 0;
+  line-height: 1.4;
 }
