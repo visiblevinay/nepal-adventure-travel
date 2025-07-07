@@ -1,14 +1,16 @@
 .tours {
-  padding: 4rem 2rem;
+  padding: 4rem 1.5rem;
   background: linear-gradient(135deg, #abcde6, #ffb5b5);
   text-align: center;
+  overflow-x: hidden;
 }
 
 .tours__heading {
   font-size: 2rem;
   margin-bottom: 2.5rem;
-color: #0d47a1;
- color: var(--primary-color);  font-weight: bold;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .tours__grid {
@@ -19,21 +21,22 @@ color: #0d47a1;
 }
 
 .tour__card {
-  background: #ffffff;
+  background: #fff;
   padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   width: 280px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  will-change: transform;
 }
 
 .tour__card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
 }
 
 .tour__image {
@@ -45,9 +48,10 @@ color: #0d47a1;
 }
 
 .tour__card h3 {
-color: #0d47a1;
- color: var(--primary-color);  font-size: 1.15rem;
+  color: var(--primary-color);
+  font-size: 1.15rem;
   margin-bottom: 0.6rem;
+  font-weight: 600;
 }
 
 .tour__desc {
@@ -66,29 +70,36 @@ color: #0d47a1;
 
 .read-more-btn {
   margin-top: 0.8rem;
-color: #0d47a1;
- color: var(--primary-color);  color: white;
+  background-color: var(--primary-color);
+  color: white;
   padding: 0.6rem 1.2rem;
   font-size: 0.85rem;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   align-self: flex-start;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
+  will-change: transform;
 }
 
 .read-more-btn:hover {
-background-color: #0b3c8a;
- background-color: var(--primary-hover);}
+  background-color: var(--primary-hover);
+  transform: scale(1.05);
+}
 
-/* Responsive */
+/* 📱 Responsive */
 @media (max-width: 768px) {
   .tour__card {
     width: 100%;
+    max-width: 320px;
   }
 
   .tours__grid {
     flex-direction: column;
     align-items: center;
+  }
+
+  .tours__heading {
+    font-size: 1.85rem;
   }
 }

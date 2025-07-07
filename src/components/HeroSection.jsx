@@ -1,7 +1,7 @@
 import React from "react";
 import "./HeroSection.css";
 import mountainImg from "../assets/mountain.jpeg";
-import heroVideo from "../assets/hero.mp4";
+import heroVideo from "../assets/hero2.mp4";
 
 function HeroSection() {
   return (

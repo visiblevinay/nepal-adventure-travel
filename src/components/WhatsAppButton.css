@@ -21,6 +21,7 @@
   background-color: #1ebe5d;
   transform: scale(1.1);
 }
+
 .whatsapp-float::after {
   content: "Chat Now";
   position: absolute;
@@ -35,11 +36,11 @@
   transition: all 0.3s ease;
   pointer-events: none;
 }
+
 .whatsapp-float:hover::after {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 @keyframes pulse {
   0% {
@@ -50,5 +51,19 @@
   }
   100% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-float {
+    right: 10px;
+    bottom: 15px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .whatsapp-float::after {
+    font-size: 0.65rem;
+    padding: 3px 8px;
   }
 }

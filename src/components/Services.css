@@ -1,14 +1,17 @@
 .services {
-  padding: 4rem 2rem;
+  padding: 4rem 1.5rem;
   background: linear-gradient(135deg, #ffb5b5, #abcde6);
   text-align: center;
+  overflow-x: hidden;
 }
 
 .services__heading {
   font-size: 2rem;
   margin-bottom: 2rem;
-color: #0d47a1;
- color: var(--primary-color);}
+  color: var(--primary-color);
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
 
 .services__grid {
   display: flex;
@@ -21,18 +24,19 @@ color: #0d47a1;
   background: #fff;
   padding: 2rem 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   width: 260px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  will-change: transform;
 }
 
 .service__card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
 .service__icon {
@@ -40,24 +44,34 @@ color: #0d47a1;
   height: 64px;
   object-fit: contain;
   margin-bottom: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.service__card:hover .service__icon {
+  transform: scale(1.1);
 }
 
 .service__card h3 {
-  color: #0d47a1;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
 }
 
 .service__card p {
   color: #555;
   font-size: 0.95rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
-/* Mobile Responsive */
+/* 📱 Mobile Responsive */
 @media screen and (max-width: 768px) {
   .service__card {
     width: 100%;
     max-width: 300px;
+  }
+
+  .services__heading {
+    font-size: 1.85rem;
   }
 }
